@@ -1,3 +1,4 @@
+import BigQueryFormatter from "./languages/BigQueryFormatter";
 import Db2Formatter from "./languages/Db2Formatter";
 import N1qlFormatter from "./languages/N1qlFormatter";
 import PlSqlFormatter from "./languages/PlSqlFormatter";
@@ -18,6 +19,8 @@ export default {
         cfg = cfg || {};
 
         switch (cfg.language) {
+            case "bigquery":
+                return new BigQueryFormatter(cfg).format(query);
             case "db2":
                 return new Db2Formatter(cfg).format(query);
             case "n1ql":
