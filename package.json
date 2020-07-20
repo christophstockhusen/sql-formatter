@@ -21,6 +21,7 @@
     "src"
   ],
   "scripts": {
+    "prepare": "npm run build",
     "clean": "rimraf lib dist",
     "lint": "eslint .",
     "test": "jest",
